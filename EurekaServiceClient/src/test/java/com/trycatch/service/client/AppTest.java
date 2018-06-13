@@ -1,11 +1,11 @@
-package com.trycatch.eureke.server;
+package com.trycatch.service.client;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple Application.
  */
 public class AppTest 
 {

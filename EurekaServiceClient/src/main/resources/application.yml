@@ -1,0 +1,13 @@
+server:
+  port: 8002
+instance:
+  hostname: 192.168.1.58
+
+spring:
+  application:
+    name: service-test
+
+eureka:
+  client:
+     service-url:
+          defaultZone: http://root:root@192.168.1.58:8888/eureka/
