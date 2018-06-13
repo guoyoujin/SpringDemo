@@ -1,9 +1,18 @@
 server:
   port: 8888
+instance:
+  hostname: localhost
+spring:
+  security:
+    user:
+      password: root
+      name: root
 
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
