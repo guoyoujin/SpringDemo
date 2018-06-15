@@ -16,7 +16,7 @@ eureka:
     homePageUrl: https://${eureka.instance.hostname}/
   client:
     healthcheck:
-      enabled: true
+      enabled: false
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
