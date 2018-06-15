@@ -1,10 +1,10 @@
 package com.trycatch.service.client;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * Hello world!
@@ -12,11 +12,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @EntityScan("com.trycatch.eurka.service.client")
 @SpringBootApplication
-@EnableEurekaClient
-public class Application
+@EnableDiscoveryClient
+public class EurekaServiceClientApplication
 {
     public static void main( String[] args )
     {
-        new SpringApplicationBuilder(Application.class).web(true).run(args);
+         new SpringApplicationBuilder(EurekaServiceClientApplication.class).web(WebApplicationType.SERVLET).run(args);
     }
 }

@@ -9,5 +9,5 @@ spring:
 
 eureka:
   client:
-     service-url:
+     serviceUrl:
           defaultZone: http://root:root@192.168.1.58:8888/eureka/

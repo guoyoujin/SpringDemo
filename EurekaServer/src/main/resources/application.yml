@@ -11,10 +11,15 @@ spring:
 eureka:
   instance:
     hostname: 192.168.1.58
+    statusPageUrl: https://${eureka.instance.hostname}:${server.port}/info
+    healthCheckUrl: https://${eureka.instance.hostname}:${server.port}/health
+    homePageUrl: https://${eureka.instance.hostname}/
   client:
+    healthcheck:
+      enabled: true
     registerWithEureka: false
     fetchRegistry: false
-    service-url:
+    serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@192.168.1.58:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
