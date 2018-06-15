@@ -1,0 +1,11 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: eureka-service-req
+
+eureka:
+  client:
+     serviceUrl:
+          defaultZone: http://root:root@192.168.1.58:8888/eureka/
