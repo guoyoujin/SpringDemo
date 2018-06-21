@@ -1,7 +1,6 @@
-package com.trycatch.data.jpa;
+package com.trycatch.data.jpa.config;
 
 
-import com.trycatch.data.jpa.entity.CommonEntity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

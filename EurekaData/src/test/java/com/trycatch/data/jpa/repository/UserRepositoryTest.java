@@ -1,6 +1,6 @@
 package com.trycatch.data.jpa.repository;
 
-import com.trycatch.data.jpa.DataConfig;
+import com.trycatch.data.jpa.config.DataConfig;
 import com.trycatch.data.jpa.config.JpaConfig;
 import com.trycatch.data.jpa.entity.UserEntity;
 import org.junit.Test;
@@ -21,8 +21,27 @@ public class UserRepositoryTest {
     private Integer userID = 1;
 
     @Test
-    public void testFindTest(){
+    public void testFind(){
         UserEntity entity = userRepository.find(userID);
-        logger.debug("======="+entity.getId().toString());
+        logger.debug("======="+entity.toString());
+    }
+
+    @Test
+    public void testFind0(){
+        try{
+            UserEntity entity = userRepository.find(0);
+        }catch (Exception e){
+            logger.debug("======="+e.getMessage());
+        }
+    }
+
+    @Test
+    public void testFindTest(){
+        try{
+            UserEntity entity = userRepository.findTest(1);
+            logger.debug("======="+entity.toString());
+        }catch (Exception e){
+            logger.debug("======="+e.getMessage());
+        }
     }
 }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface UserDao {
     List<UserEntity> findAll();
     UserEntity find(Integer id);
+    UserEntity findTest(Integer id);
 }

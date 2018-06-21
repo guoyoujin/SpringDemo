@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserService {
 
    List<UserEntity> findAll();
-    UserEntity find(Integer id);
+   UserEntity find(Integer id);
 }
