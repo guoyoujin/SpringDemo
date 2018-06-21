@@ -16,8 +16,14 @@ public class UserServiceImpl implements UserService{
     public List<UserEntity> findAll() {
         return this.userRepository.findAll();
     }
+
     @Override
     public UserEntity find(Integer id){
         return this.userRepository.find(id);
+    }
+
+    @Override
+    public UserEntity findTest(Integer id){
+        return this.userRepository.findTest(id);
     }
 }

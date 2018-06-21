@@ -22,8 +22,12 @@ public class UserRepositoryTest {
 
     @Test
     public void testFind(){
-        UserEntity entity = userRepository.find(userID);
-        logger.debug("======="+entity.toString());
+        try{
+            UserEntity entity = userRepository.find(userID);
+            logger.debug("======="+entity.toString());
+        }catch (Exception e){
+            logger.debug("======="+e.getMessage());
+        }
     }
 
     @Test

@@ -5,6 +5,7 @@ import com.trycatch.data.jpa.config.DataConfig;
 import com.trycatch.data.jpa.config.JpaConfig;
 import com.trycatch.data.jpa.entity.UserEntity;
 import com.trycatch.data.jpa.repository.UserRepositoryTest;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -28,22 +29,32 @@ public class UserServiceTest {
     @Test
     public void testFind(){
         UserEntity userEntity = userService.find(userID);
-        logger.debug(userEntity.toString());
+        logger.info("testFind  userEntity ",userEntity);
     }
 
     @Test
     public void testFind0(){
         try {
-            UserEntity userEntity = userService.find(-1);
+            UserEntity userEntity = userService.find(0);
+            logger.info("testFind0  userEntity ", userEntity);
         }catch (Exception e){
-            logger.debug("====="+e.toString());
+            logger.error("Exception",e);
         }
-//        logger.debug(userEntity.toString());
     }
 
     @Test
     public void testFindAll(){
         List<UserEntity> ListUserEntity = userService.findAll();
         logger.debug(ListUserEntity.toString());
+    }
+
+    @Test
+    public void testFindTest(){
+        try{
+            UserEntity userEntity = userService.findTest(1);
+            logger.info("testFindTest  userEntity ",userEntity);
+        }catch (Exception e){
+            logger.error("Exception",e);
+        }
     }
 }

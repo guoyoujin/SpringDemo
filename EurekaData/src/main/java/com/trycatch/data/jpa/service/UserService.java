@@ -11,4 +11,5 @@ public interface UserService {
 
    List<UserEntity> findAll();
    UserEntity find(Integer id);
+   UserEntity findTest(Integer id);
 }
