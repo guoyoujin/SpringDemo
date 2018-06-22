@@ -22,7 +22,7 @@ public class UserDaoImplTest {
     @Autowired
     private UserDao userDao;
 
-    private Integer userID = 1;
+    private Long userID = 1L;
 
     @Test
     public void testFind(){

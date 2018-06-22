@@ -18,7 +18,7 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
-    private Integer userID = 1;
+    private Long userID = 1L;
 
     @Test
     public void testFind(){
@@ -33,7 +33,7 @@ public class UserRepositoryTest {
     @Test
     public void testFind0(){
         try{
-            UserEntity entity = userRepository.find(0);
+            UserEntity entity = userRepository.find(0L);
         }catch (Exception e){
             logger.debug("======="+e.getMessage());
         }
@@ -42,7 +42,7 @@ public class UserRepositoryTest {
     @Test
     public void testFindTest(){
         try{
-            UserEntity entity = userRepository.findTest(1);
+            UserEntity entity = userRepository.findTest(1L);
             logger.debug("======="+entity.toString());
         }catch (Exception e){
             logger.debug("======="+e.getMessage());

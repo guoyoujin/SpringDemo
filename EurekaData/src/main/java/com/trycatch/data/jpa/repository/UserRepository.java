@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer>,UserDao {
+public interface UserRepository extends JpaRepository<UserEntity, Long>,UserDao {
     //此方法如果查询为空返回对象就是空，不会返回异常
     @Query("select u from UserEntity u where u.id = :id")
-    UserEntity find(@Param("id") Integer id);
+    UserEntity find(@Param("id") Long id);
 }

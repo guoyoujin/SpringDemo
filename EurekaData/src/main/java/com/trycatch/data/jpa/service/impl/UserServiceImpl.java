@@ -18,12 +18,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserEntity find(Integer id){
+    public UserEntity find(Long id){
         return this.userRepository.find(id);
     }
 
     @Override
-    public UserEntity findTest(Integer id){
+    public UserEntity findTest(Long id){
         return this.userRepository.findTest(id);
     }
 }

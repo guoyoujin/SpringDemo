@@ -24,19 +24,19 @@ public class UserServiceTest {
     @Autowired
     private UserService userService;
 
-    private Integer userID = 1;
+    private Long userID = 1L;
 
     @Test
     public void testFind(){
         UserEntity userEntity = userService.find(userID);
-        logger.info("testFind  userEntity ",userEntity);
+        logger.info("testFind  userEntity ,{}",userEntity);
     }
 
     @Test
     public void testFind0(){
         try {
-            UserEntity userEntity = userService.find(0);
-            logger.info("testFind0  userEntity ", userEntity);
+            UserEntity userEntity = userService.find(0L);
+            logger.info("testFind0  userEntity  ,{}", userEntity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
@@ -45,14 +45,14 @@ public class UserServiceTest {
     @Test
     public void testFindAll(){
         List<UserEntity> ListUserEntity = userService.findAll();
-        logger.debug(ListUserEntity.toString());
+        logger.info("testFindAll  ListUserEntity  ,{}", ListUserEntity);
     }
 
     @Test
     public void testFindTest(){
         try{
-            UserEntity userEntity = userService.findTest(1);
-            logger.info("testFindTest  userEntity ",userEntity);
+            UserEntity userEntity = userService.findTest(1L);
+            logger.info("testFindTest  userEntity  ,{}",userEntity);
         }catch (Exception e){
             logger.error("Exception",e);
         }

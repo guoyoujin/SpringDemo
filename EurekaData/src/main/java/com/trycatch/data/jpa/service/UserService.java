@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserService {
 
    List<UserEntity> findAll();
-   UserEntity find(Integer id);
-   UserEntity findTest(Integer id);
+   UserEntity find(Long id);
+   UserEntity findTest(Long id);
 }

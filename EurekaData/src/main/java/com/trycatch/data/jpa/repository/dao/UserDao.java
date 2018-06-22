@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 public interface UserDao {
     List<UserEntity> findAll();
-    UserEntity find(Integer id);
-    UserEntity findTest(Integer id);
+    UserEntity find(Long id);
+    UserEntity findTest(Long id);
 }

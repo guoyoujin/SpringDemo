@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public UserEntity find(Integer id) {
+    public UserEntity find(Long id) {
         return this.entityManager
                 .createQuery("select t from UserEntity t where t.id = :id ", UserEntity.class)
                 .setParameter("id", id)
@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public UserEntity findTest(Integer id) {
+    public UserEntity findTest(Long id) {
         return this.entityManager
                 .createQuery("select t from UserEntity t where t.id = :id ", UserEntity.class)
                 .setParameter("id", id)
