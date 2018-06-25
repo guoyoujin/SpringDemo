@@ -21,9 +21,9 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL5Dialect
       ddl-auto: update
-      domain-package: com.trycatch.data.jpa
+      domain-package: com.trycatch.eurekabean.data.entity
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.SpringPhysicalNamingStrategy
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 eureka:
   instance:
     hostname: 192.168.1.58

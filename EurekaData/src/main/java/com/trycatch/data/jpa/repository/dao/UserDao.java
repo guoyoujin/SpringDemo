@@ -1,7 +1,6 @@
 package com.trycatch.data.jpa.repository.dao;
 
-import com.trycatch.data.jpa.entity.UserEntity;
-import org.springframework.stereotype.Repository;
+import com.trycatch.eurekabean.data.entity.UserEntity;
 
 import java.util.List;
 public interface UserDao {

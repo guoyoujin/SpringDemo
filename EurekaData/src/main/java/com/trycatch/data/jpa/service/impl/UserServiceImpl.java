@@ -1,8 +1,8 @@
 package com.trycatch.data.jpa.service.impl;
 
-import com.trycatch.data.jpa.entity.UserEntity;
 import com.trycatch.data.jpa.repository.UserRepository;
 import com.trycatch.data.jpa.service.UserService;
+import com.trycatch.eurekabean.data.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

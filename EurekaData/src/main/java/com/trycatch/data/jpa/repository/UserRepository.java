@@ -1,7 +1,7 @@
 package com.trycatch.data.jpa.repository;
 
-import com.trycatch.data.jpa.entity.UserEntity;
 import com.trycatch.data.jpa.repository.dao.UserDao;
+import com.trycatch.eurekabean.data.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

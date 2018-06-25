@@ -1,7 +1,8 @@
 package com.trycatch.data.jpa.repository.dao.impl;
 
-import com.trycatch.data.jpa.entity.UserEntity;
 import com.trycatch.data.jpa.repository.dao.UserDao;
+import com.trycatch.eurekabean.data.entity.UserEntity;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

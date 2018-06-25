@@ -1,4 +1,4 @@
-package com.trycatch.data.jpa.entity;
+package com.trycatch.eurekabean.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
