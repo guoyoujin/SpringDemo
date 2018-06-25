@@ -1,14 +1,15 @@
-package com.trycatch.data.jpa.service.impl;
+package com.trycatch.data.jpa.txhims.service.impl;
 
-import com.trycatch.data.jpa.repository.UserRepository;
-import com.trycatch.data.jpa.service.UserService;
-import com.trycatch.eurekabean.data.entity.UserEntity;
+import com.trycatch.data.jpa.txhims.repository.UserRepository;
+import com.trycatch.data.jpa.txhims.service.UserService;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 

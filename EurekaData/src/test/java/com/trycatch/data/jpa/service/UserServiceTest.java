@@ -4,16 +4,15 @@ package com.trycatch.data.jpa.service;
 import com.trycatch.data.jpa.config.DataConfig;
 import com.trycatch.data.jpa.config.JpaConfig;
 import com.trycatch.data.jpa.repository.UserRepositoryTest;
-import com.trycatch.eurekabean.data.entity.UserEntity;
+import com.trycatch.data.jpa.txdiag.service.UserService;
+import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 

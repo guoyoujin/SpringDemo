@@ -2,7 +2,8 @@ package com.trycatch.data.jpa.repository.dao;
 
 import com.trycatch.data.jpa.config.DataConfig;
 import com.trycatch.data.jpa.config.JpaConfig;
-import com.trycatch.eurekabean.data.entity.UserEntity;
+import com.trycatch.data.jpa.txdiag.repository.dao.UserDao;
+import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

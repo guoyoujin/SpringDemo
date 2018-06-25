@@ -21,7 +21,7 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL5Dialect
       ddl-auto: update
-      domain-package: com.trycatch.eurekabean.data.entity
+      domain-package: com.trycatch.eurekabean.data.txdiag.entity
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 eureka:

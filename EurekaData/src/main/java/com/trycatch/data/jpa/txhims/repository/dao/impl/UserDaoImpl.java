@@ -1,8 +1,7 @@
-package com.trycatch.data.jpa.repository.dao.impl;
+package com.trycatch.data.jpa.txhims.repository.dao.impl;
 
-import com.trycatch.data.jpa.repository.dao.UserDao;
-import com.trycatch.eurekabean.data.entity.UserEntity;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.trycatch.data.jpa.txhims.repository.dao.UserDao;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -10,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 

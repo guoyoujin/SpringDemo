@@ -1,6 +1,7 @@
-package com.trycatch.data.jpa.service;
+package com.trycatch.data.jpa.txhims.service;
 
-import com.trycatch.eurekabean.data.entity.UserEntity;
+
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 
 import java.util.List;
 
