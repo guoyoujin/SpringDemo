@@ -1,4 +1,4 @@
-package com.trycatch.eurekabean.data.entity;
+package com.trycatch.eurekabean.data.txdiag.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class UserEntity extends BaseEntity{
+public class UserEntity extends BaseEntity {
 
     @Column(name="name")
     private String name;

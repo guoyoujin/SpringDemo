@@ -1,9 +1,9 @@
-package com.trycatch.eurekabean.data.entity;
+package com.trycatch.eurekabean.data.txhims.entity;
 
 import javax.persistence.*;
 
 @MappedSuperclass
-public class BaseEntity extends CommonEntity{
+public class BaseEntity extends CommonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column( name = "id" )

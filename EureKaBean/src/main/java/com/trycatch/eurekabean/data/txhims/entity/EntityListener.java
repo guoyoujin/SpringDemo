@@ -1,4 +1,4 @@
-package com.trycatch.eurekabean.data.entity;
+package com.trycatch.eurekabean.data.txhims.entity;
 
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
