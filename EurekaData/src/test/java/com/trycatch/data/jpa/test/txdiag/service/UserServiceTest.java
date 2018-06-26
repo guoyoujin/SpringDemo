@@ -1,6 +1,7 @@
-package com.trycatch.data.jpa.txdiag.service;
+package com.trycatch.data.jpa.test.txdiag.service;
 
 import com.trycatch.data.jpa.Application;
+import com.trycatch.data.jpa.txdiag.service.UserService;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)

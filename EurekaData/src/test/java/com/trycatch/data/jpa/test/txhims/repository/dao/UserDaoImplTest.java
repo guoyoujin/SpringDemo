@@ -1,6 +1,7 @@
-package com.trycatch.data.jpa.txhims.repository.dao;
+package com.trycatch.data.jpa.test.txhims.repository.dao;
 
 import com.trycatch.data.jpa.Application;
+import com.trycatch.data.jpa.txhims.repository.dao.UserDao;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)

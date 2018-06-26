@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @MappedSuperclass
 public class BaseEntity extends CommonEntity {
+    private static final long serialVersionUID= 213111232313123113L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column( name = "id" )

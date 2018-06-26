@@ -1,6 +1,7 @@
-package com.trycatch.data.jpa.txdiag.repository.dao;
+package com.trycatch.data.jpa.test.txdiag.repository.dao;
 
 import com.trycatch.data.jpa.Application;
+import com.trycatch.data.jpa.txdiag.repository.dao.UserDao;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;

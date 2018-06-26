@@ -5,6 +5,7 @@ import javax.persistence.PreUpdate;
 import java.util.Date;
 
 public class EntityListener {
+    private static final long serialVersionUID= 2131112312313123123L;
     @PrePersist
     public void prePersist(CommonEntity entity) {
         entity.setCreatedAt(new Date());

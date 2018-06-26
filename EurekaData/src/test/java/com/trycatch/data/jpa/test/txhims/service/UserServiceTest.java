@@ -1,7 +1,8 @@
-package com.trycatch.data.jpa.txhims.service;
+package com.trycatch.data.jpa.test.txhims.service;
 
 
 import com.trycatch.data.jpa.Application;
+import com.trycatch.data.jpa.txhims.service.UserService;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;

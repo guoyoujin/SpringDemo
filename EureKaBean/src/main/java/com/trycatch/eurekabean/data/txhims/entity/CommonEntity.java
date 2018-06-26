@@ -7,6 +7,7 @@ import java.util.Date;
 @EntityListeners({EntityListener.class})
 @MappedSuperclass
 public class CommonEntity implements Serializable {
+    private static final long serialVersionUID= 213111232313123123L;
     @Column(name="created_at")
     private Date createdAt;
     @Column(name="updated_at")

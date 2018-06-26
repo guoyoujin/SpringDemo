@@ -1,12 +1,12 @@
 spring:
   datasource:
     txdiag:
-      url: jdbc:mysql://localhost:3306/txdiag?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      jdbc-url: jdbc:mysql://localhost:3306/txdiag?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
       password:
       driver-class-name: com.mysql.jdbc.Driver
     txhims:
-      url: jdbc:mysql://localhost:3306/txhims?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      jdbc-url: jdbc:mysql://localhost:3306/txhims?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
       password:
       driver-class-name: com.mysql.jdbc.Driver

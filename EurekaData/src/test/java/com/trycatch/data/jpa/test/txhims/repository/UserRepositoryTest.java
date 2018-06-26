@@ -1,7 +1,8 @@
-package com.trycatch.data.jpa.txdiag.repository;
+package com.trycatch.data.jpa.test.txhims.repository;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
+import com.trycatch.data.jpa.txhims.repository.UserRepository;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
