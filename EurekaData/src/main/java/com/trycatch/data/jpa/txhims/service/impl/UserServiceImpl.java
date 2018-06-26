@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("com.trycatch.data.jpa.txhims.service.impl.UserService")
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;

@@ -4,13 +4,15 @@ import com.trycatch.data.jpa.txdiag.repository.dao.UserDao;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Repository
+@Repository("com.trycatch.data.jpa.txdiag.repository.dao.impl.UserDaoImpl")
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
+    @Resource(name = "txdiagEntityManager")
     private EntityManager entityManager;
 
     @Override

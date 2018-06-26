@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Repository
+@Repository("com.trycatch.data.jpa.txhims.repository.dao.impl.UserDaoImpl")
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
