@@ -27,4 +27,4 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 logging:
   config: classpath:logback-boot.xml
-  file: myapplication.log
+  file: log/myapplication.log
