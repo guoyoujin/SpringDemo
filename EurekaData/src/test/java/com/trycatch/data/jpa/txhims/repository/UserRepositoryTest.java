@@ -1,13 +1,13 @@
-package com.trycatch.data.jpa.test.txhims.repository;
+package com.trycatch.data.jpa.txhims.repository;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.data.jpa.txhims.repository.UserRepository;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -17,6 +17,7 @@ public class UserRepositoryTest {
     private final static Logger logger = LoggerFactory.getLogger(UserRepositoryTest.class);
 
     @Autowired
+    @Qualifier("com.trycatch.data.jpa.txhims.repository.UserRepository")
     private UserRepository userRepository;
     private Long userID = 1L;
 
@@ -44,9 +45,9 @@ public class UserRepositoryTest {
     public void testFindTest(){
         try{
             UserEntity entity = userRepository.findTest(1L);
-            logger.info("testFindTest  userEntity ,{}",entity.toString());
+            logger.info("=======testFindTest  userEntity ,{}",entity.toString());
         }catch (Exception e){
-            logger.debug("======="+e.getMessage());
+            logger.debug("=======Exception     "+e.getMessage());
         }
     }
 }

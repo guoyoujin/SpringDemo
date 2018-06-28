@@ -16,7 +16,7 @@ public class DataSourceConfig {
     @Primary
     @Bean(name = "txdiagDataSource")
     @Qualifier("txdiagDataSource")
-    @ConfigurationProperties("spring.datasource.txdiag")
+    @ConfigurationProperties(prefix = "spring.datasource.txdiag")
     public DataSource txdiagDataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -24,7 +24,7 @@ public class DataSourceConfig {
 
     @Bean(name = "txhimsDataSource")
     @Qualifier("txhimsDataSource")
-    @ConfigurationProperties("spring.datasource.txhims")
+    @ConfigurationProperties(prefix = "spring.datasource.txhims")
     public DataSource txhimsDataSource() {
         return DataSourceBuilder.create().build();
     }

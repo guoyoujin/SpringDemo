@@ -1,5 +1,7 @@
 package com.trycatch.data.jpa.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,22 +16,23 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Map;
 
-@EnableTransactionManagement
 @EnableJpaRepositories(
         basePackages = {
-                "com.trycatch.data.jpa.txhims.repository",
-                "com.trycatch.data.jpa.txhims.service"
+            "com.trycatch.data.jpa.txhims",
+            "com.trycatch.eurekabean.data.txhims.entity"
         },
         entityManagerFactoryRef = "txhimsEntityManagerFactory",
-        transactionManagerRef = "txhimsTransactionManager"
+        transactionManagerRef = "txhimsTransactionManager",
+        repositoryImplementationPostfix = "Impl"
 )
-
+@EnableTransactionManagement
 @Import(value = {PropertyConfig.class})
 @Configuration
 public class TxhimsDataSourceConfig extends JpaConfig{
+    private final static Logger logger = LoggerFactory.getLogger(TxhimsDataSourceConfig.class);
 
     @Autowired
-    @Qualifier("txhimsDataSource")
+    @Qualifier(value="txhimsDataSource")
     private DataSource txhimsDataSource;
 
     @Value("${spring.jpa.hibernate.txhims.domain-package}")
@@ -40,23 +43,21 @@ public class TxhimsDataSourceConfig extends JpaConfig{
 
     @Bean(name = "txhimsEntityManager")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
+        return txhimsEntityManagerFactory(builder).getObject().createEntityManager();
     }
 
     @Bean(name = "txhimsEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
+    public LocalContainerEntityManagerFactoryBean txhimsEntityManagerFactory (EntityManagerFactoryBuilder builder) {
         Map<String,Object> jpaMap= buildProperties();
-        jpaMap.put("hibernate.domain-package",domainPackage);
         return builder.dataSource(txhimsDataSource)
-                .packages(domainPackage)
-                .persistenceUnit(persistenceUnit)
                 .properties(jpaMap)
+                .packages(new String[]{domainPackage})
+                .persistenceUnit(persistenceUnit)
                 .build();
     }
 
     @Bean(name="txhimsTransactionManager")
-    @Autowired
-    public PlatformTransactionManager primaryTransactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
+    public PlatformTransactionManager txhimsTransactionManager(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(txhimsEntityManagerFactory(builder).getObject());
     }
 }

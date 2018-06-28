@@ -1,7 +1,6 @@
-package com.trycatch.data.jpa.test.txdiag.repository;
+package com.trycatch.data.jpa.txdiag.repository;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.data.jpa.txdiag.repository.UserRepository;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,12 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
 public class UserRepositoryTest {
     private final static Logger logger = LoggerFactory.getLogger(UserRepositoryTest.class);
 
-    @Autowired
+    @Autowired(required = false)
+    @Resource(name="com.trycatch.data.jpa.txdiag.repository.UserRepository")
     private UserRepository userRepository;
     private Long userID = 1L;
 

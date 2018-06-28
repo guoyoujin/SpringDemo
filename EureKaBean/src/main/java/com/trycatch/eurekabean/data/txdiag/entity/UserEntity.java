@@ -1,13 +1,11 @@
 package com.trycatch.eurekabean.data.txdiag.entity;
 
-import javafx.util.converter.TimeStringConverter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 
-@Entity
+@Entity(name="com.trycatch.eurekabean.data.txdiag.entity.UserEntity")
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
     private static final long serialVersionUID= 21312313123123L;
@@ -127,5 +125,40 @@ public class UserEntity extends BaseEntity {
                 ", hasDelete=" + hasDelete +
                 ", doctorId=" + doctorId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserEntity)) return false;
+
+        UserEntity that = (UserEntity) o;
+
+        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
+        if (getPhone() != null ? !getPhone().equals(that.getPhone()) : that.getPhone() != null) return false;
+        if (getEmail() != null ? !getEmail().equals(that.getEmail()) : that.getEmail() != null) return false;
+        if (getSalt() != null ? !getSalt().equals(that.getSalt()) : that.getSalt() != null) return false;
+        if (getRole() != null ? !getRole().equals(that.getRole()) : that.getRole() != null) return false;
+        if (getFirstLogin() != null ? !getFirstLogin().equals(that.getFirstLogin()) : that.getFirstLogin() != null)
+            return false;
+        if (getRealname() != null ? !getRealname().equals(that.getRealname()) : that.getRealname() != null)
+            return false;
+        if (getHasDelete() != null ? !getHasDelete().equals(that.getHasDelete()) : that.getHasDelete() != null)
+            return false;
+        return getDoctorId() != null ? getDoctorId().equals(that.getDoctorId()) : that.getDoctorId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getPhone() != null ? getPhone().hashCode() : 0);
+        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
+        result = 31 * result + (getSalt() != null ? getSalt().hashCode() : 0);
+        result = 31 * result + (getRole() != null ? getRole().hashCode() : 0);
+        result = 31 * result + (getFirstLogin() != null ? getFirstLogin().hashCode() : 0);
+        result = 31 * result + (getRealname() != null ? getRealname().hashCode() : 0);
+        result = 31 * result + (getHasDelete() != null ? getHasDelete().hashCode() : 0);
+        result = 31 * result + (getDoctorId() != null ? getDoctorId().hashCode() : 0);
+        return result;
     }
 }

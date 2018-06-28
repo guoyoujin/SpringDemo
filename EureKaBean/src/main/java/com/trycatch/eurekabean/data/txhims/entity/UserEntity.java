@@ -4,12 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-
-@Entity
 @Table(name = "users")
+@Entity(name="com.trycatch.eurekabean.data.txhims.entity.UserEntity")
 public class UserEntity extends BaseEntity {
     private static final long serialVersionUID= 21312312313123123L;
-
 
     @Column(name="name")
     private String name;

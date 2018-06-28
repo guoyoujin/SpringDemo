@@ -12,7 +12,7 @@ public class JpaConfig {
     @Value("${spring.jpa.hibernate.dialect}")
     String dialect;
     @Value("${spring.jpa.show-sql}")
-    String showSql;
+    Boolean showSql;
     @Value("${spring.jpa.hibernate.naming.physical-strategy}")
     String physicalStrategy;
 

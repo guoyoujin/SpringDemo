@@ -1,17 +1,18 @@
-package com.trycatch.data.jpa.test.txhims.service;
+package com.trycatch.data.jpa.txhims.service;
 
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.data.jpa.txhims.service.UserService;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -20,6 +21,7 @@ public class UserServiceTest {
     private final static Logger logger = LoggerFactory.getLogger(UserServiceTest.class);
 
     @Autowired
+    @Qualifier("com.trycatch.data.jpa.txhims.service.impl.UserServiceImpl")
     private UserService userService;
 
     private Long userID = 1L;

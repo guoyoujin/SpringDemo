@@ -15,19 +15,17 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Map;
 
-
+@Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
     basePackages = {
-        "com.trycatch.data.jpa.txdiag.repository",
-        "com.trycatch.data.jpa.txdiag.service"
+        "com.trycatch.data.jpa.txdiag"
     },
+    repositoryImplementationPostfix = "Impl",
     entityManagerFactoryRef = "txdiagEntityManagerFactory",
     transactionManagerRef = "txdiagTransactionManager"
 )
-
 @Import(value = {PropertyConfig.class})
-@Configuration
 public class TxdiagDataSourceConfig extends JpaConfig{
 
     @Autowired
@@ -43,25 +41,24 @@ public class TxdiagDataSourceConfig extends JpaConfig{
     @Primary
     @Bean(name = "txdiagEntityManager")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
+        return txdiagEntityManagerFactory(builder).getObject().createEntityManager();
     }
 
     @Bean(name = "txdiagEntityManagerFactory")
     @Primary
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
+    public LocalContainerEntityManagerFactoryBean txdiagEntityManagerFactory (EntityManagerFactoryBuilder builder) {
         Map<String,Object> jpaMap= buildProperties();
-        jpaMap.put("hibernate.domain-package",domainPackage);
         return builder.dataSource(txdiagDataSource)
-                .packages(domainPackage)
-                .persistenceUnit(persistenceUnit)
                 .properties(jpaMap)
+                .packages(new String[]{domainPackage})
+                .persistenceUnit(persistenceUnit)
                 .build();
     }
 
     @Bean(name="txdiagTransactionManager")
     @Autowired
-    public PlatformTransactionManager primaryTransactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
+    public PlatformTransactionManager txdiagTransactionManager(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(txdiagEntityManagerFactory(builder).getObject());
     }
 
 }
