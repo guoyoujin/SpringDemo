@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 public class TxhimsEntityManager {
-    @PersistenceContext
+    @PersistenceContext(unitName="txhimsUnit")
     @Autowired
     @Qualifier("txhimsEntityManagerFactory")
     public EntityManager entityManager;

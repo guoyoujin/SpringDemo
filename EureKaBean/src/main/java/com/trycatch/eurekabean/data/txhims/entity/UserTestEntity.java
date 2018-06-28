@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Table(name = "users")
-@Entity(name="com.trycatch.eurekabean.data.txhims.entity.UserEntity")
-public class UserEntity extends BaseEntity {
+@Entity(name="com.trycatch.eurekabean.data.txhims.entity.UserTestEntity")
+public class UserTestEntity extends BaseEntity {
     private static final long serialVersionUID= 21312312313123123L;
 
     @Column(name="name")
@@ -110,7 +110,7 @@ public class UserEntity extends BaseEntity {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "UserTestEntity{" +
                 "name='" + name + '\'' +
                 ", id='" + this.getId() + '\'' +
                 ", created_at='" + this.getCreatedAt() + '\'' +

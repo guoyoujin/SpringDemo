@@ -2,7 +2,7 @@ package com.trycatch.data.jpa.txhims.service;
 
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
+import com.trycatch.eurekabean.data.txhims.entity.UserTestEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,14 +27,14 @@ public class UserServiceTest {
 
     @Test
     public void testFind(){
-        UserEntity userEntity = userService.find(userID);
+        UserTestEntity userEntity = userService.find(userID);
         logger.info("testFind  userEntity ,{}",userEntity);
     }
 
     @Test
     public void testFind0(){
         try {
-            UserEntity userEntity = userService.find(0L);
+            UserTestEntity userEntity = userService.find(0L);
             logger.info("testFind0  userEntity  ,{}", userEntity);
         }catch (Exception e){
             logger.error("Exception",e);
@@ -44,14 +43,14 @@ public class UserServiceTest {
 
     @Test
     public void testFindAll(){
-        List<UserEntity> ListUserEntity = userService.findAll();
-        logger.info("testFindAll  ListUserEntity  ,{}", ListUserEntity);
+        List<UserTestEntity> listUserTestEntity = userService.findAll();
+        logger.info("testFindAll  listUserTestEntity  ,{}", listUserTestEntity);
     }
 
     @Test
     public void testFindTest(){
         try{
-            UserEntity userEntity = userService.findTest(1L);
+            UserTestEntity userEntity = userService.findTest(1L);
             logger.info("testFindTest  userEntity  ,{}",userEntity);
         }catch (Exception e){
             logger.error("Exception",e);
