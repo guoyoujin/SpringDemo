@@ -1,5 +1,7 @@
 package com.trycatch.data.jpa.config;
 
+import com.trycatch.data.jpa.txdiag.TxdiagRepository;
+import com.trycatch.eurekabean.data.txdiag.entity.TxdiagEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +20,8 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-    basePackages = {
-        "com.trycatch.data.jpa.txdiag"
+    basePackageClasses = {
+            TxdiagRepository.class
     },
     repositoryImplementationPostfix = "Impl",
     entityManagerFactoryRef = "txdiagEntityManagerFactory",
@@ -31,9 +33,6 @@ public class TxdiagDataSourceConfig extends JpaConfig{
     @Autowired
     @Qualifier("txdiagDataSource")
     private DataSource txdiagDataSource;
-
-    @Value("${spring.jpa.hibernate.txdiag.domain-package}")
-    String domainPackage;
 
     @Value("${spring.jpa.hibernate.txdiag.persistence-unit}")
     String persistenceUnit;
@@ -50,7 +49,7 @@ public class TxdiagDataSourceConfig extends JpaConfig{
         Map<String,Object> jpaMap= buildProperties();
         return builder.dataSource(txdiagDataSource)
                 .properties(jpaMap)
-                .packages(new String[]{domainPackage})
+                .packages(TxdiagEntity.class)
                 .persistenceUnit(persistenceUnit)
                 .build();
     }

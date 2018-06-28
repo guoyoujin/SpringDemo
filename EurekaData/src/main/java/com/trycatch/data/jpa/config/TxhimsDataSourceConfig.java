@@ -1,5 +1,7 @@
 package com.trycatch.data.jpa.config;
 
+import com.trycatch.data.jpa.txhims.TxhimsRepository;
+import com.trycatch.eurekabean.data.txhims.entity.TxhimsEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +19,8 @@ import javax.sql.DataSource;
 import java.util.Map;
 
 @EnableJpaRepositories(
-        basePackages = {
-            "com.trycatch.data.jpa.txhims",
-            "com.trycatch.eurekabean.data.txhims.entity"
+        basePackageClasses = {
+                TxhimsRepository.class
         },
         entityManagerFactoryRef = "txhimsEntityManagerFactory",
         transactionManagerRef = "txhimsTransactionManager",
@@ -35,9 +36,6 @@ public class TxhimsDataSourceConfig extends JpaConfig{
     @Qualifier(value="txhimsDataSource")
     private DataSource txhimsDataSource;
 
-    @Value("${spring.jpa.hibernate.txhims.domain-package}")
-    String domainPackage;
-
     @Value("${spring.jpa.hibernate.txhims.persistence-unit}")
     String persistenceUnit;
 
@@ -51,7 +49,7 @@ public class TxhimsDataSourceConfig extends JpaConfig{
         Map<String,Object> jpaMap= buildProperties();
         return builder.dataSource(txhimsDataSource)
                 .properties(jpaMap)
-                .packages(new String[]{domainPackage})
+                .packages(TxhimsEntity.class)
                 .persistenceUnit(persistenceUnit)
                 .build();
     }
