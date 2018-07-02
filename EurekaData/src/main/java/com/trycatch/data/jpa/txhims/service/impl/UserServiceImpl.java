@@ -27,6 +27,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<UserEntity> findListByNativeSql(String queryString, Class<UserEntity> clzss) {
+        logger.info("txhims UserServiceImpl  findListByNativeSql  =======================");
+        return this.userRepository.findListByNativeSql(queryString,clzss);
+    }
+
+    @Override
     public UserEntity find(Long id){
         logger.info("txhims UserServiceImpl  find  =======================");
         return this.userRepository.find(id);
@@ -36,5 +42,10 @@ public class UserServiceImpl implements UserService {
     public UserEntity findTest(Long id){
         logger.info("txhims UserServiceImpl  findTest  =======================");
         return this.userRepository.findTest(id);
+    }
+
+    @Override
+    public List<UserEntity> list() {
+        return null;
     }
 }

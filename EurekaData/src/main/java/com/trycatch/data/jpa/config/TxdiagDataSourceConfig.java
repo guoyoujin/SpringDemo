@@ -1,6 +1,7 @@
 package com.trycatch.data.jpa.config;
 
-import com.trycatch.data.jpa.txdiag.repository.TxdiagRepository;
+import com.trycatch.data.jpa.BaseRepositoryFactoryBean;
+import com.trycatch.data.jpa.txdiag.repository.BaseRepository;
 import com.trycatch.eurekabean.data.txdiag.entity.TxdiagEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,8 +22,9 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(
     basePackageClasses = {
-            TxdiagRepository.class
+            BaseRepository.class
     },
+    repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class,
     repositoryImplementationPostfix = "Impl",
     entityManagerFactoryRef = "txdiagEntityManagerFactory",
     transactionManagerRef = "txdiagTransactionManager"

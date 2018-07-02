@@ -1,6 +1,7 @@
 package com.trycatch.data.jpa.config;
 
-import com.trycatch.data.jpa.txhims.repository.TxhimsRepository;
+import com.trycatch.data.jpa.BaseRepositoryFactoryBean;
+import com.trycatch.data.jpa.txhims.repository.BaseRepository;
 import com.trycatch.eurekabean.data.txhims.entity.TxhimsEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +21,9 @@ import java.util.Map;
 
 @EnableJpaRepositories(
         basePackageClasses = {
-                TxhimsRepository.class
+                BaseRepository.class
         },
+        repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class,
         entityManagerFactoryRef = "txhimsEntityManagerFactory",
         transactionManagerRef = "txhimsTransactionManager",
         repositoryImplementationPostfix = "Impl"

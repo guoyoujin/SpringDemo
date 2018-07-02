@@ -26,6 +26,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<UserEntity> findListByNativeSql(String queryString, Class<UserEntity> clzss) {
+        logger.info("txdiag UserServiceImpl  findListByNativeSql()");
+        return this.userRepository.findListByNativeSql(queryString,clzss);
+    }
+
+    @Override
+    public List<UserEntity> list() {
+        return this.userRepository.findAll();
+    }
+
+    @Override
     public UserEntity find(Long id){
         logger.info("txdiag UserServiceImpl  find()");
         return this.userRepository.find(id);

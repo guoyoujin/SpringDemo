@@ -55,4 +55,14 @@ public class UserServiceTest {
             logger.error("Exception",e);
         }
     }
+
+    @Test
+    public void testFindListByNativeSql(){
+        try{
+            List<UserEntity> listUserEntity = userService.findListByNativeSql("select *from users",UserEntity.class);
+            logger.info("testFindListByNativeSql  listUserEntity  ,{}",listUserEntity);
+        }catch (Exception e){
+            logger.error("Exception",e);
+        }
+    }
 }
