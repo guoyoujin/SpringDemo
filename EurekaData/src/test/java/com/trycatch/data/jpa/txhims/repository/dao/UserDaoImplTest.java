@@ -1,7 +1,7 @@
 package com.trycatch.data.jpa.txhims.repository.dao;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.eurekabean.data.txhims.entity.UserTestEntity;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,13 +27,13 @@ public class UserDaoImplTest {
 
     @Test
     public void testFind(){
-        UserTestEntity entity = userDao.find(userID);
+        UserEntity entity = userDao.find(userID);
         logger.debug("======="+entity.toString());
     }
 
     @Test
     public void testFindAll(){
-        List<UserTestEntity> listUserEntity = userDao.findAll();
+        List<UserEntity> listUserEntity = userDao.findAll();
         logger.debug("======="+listUserEntity.toString());
     }
 }

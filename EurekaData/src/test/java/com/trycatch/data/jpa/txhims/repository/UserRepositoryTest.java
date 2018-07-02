@@ -1,7 +1,7 @@
 package com.trycatch.data.jpa.txhims.repository;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.eurekabean.data.txhims.entity.UserTestEntity;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ public class UserRepositoryTest {
     @Test
     public void testFind(){
         try{
-            UserTestEntity entity = userRepository.find(userID);
+            UserEntity entity = userRepository.find(userID);
             logger.info("testFind  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.debug("======="+e.getMessage());
@@ -34,7 +34,7 @@ public class UserRepositoryTest {
     @Test
     public void testFind0(){
         try{
-            UserTestEntity entity = userRepository.find(0L);
+            UserEntity entity = userRepository.find(0L);
             logger.info("testFind0  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.debug("======="+e.getMessage());
@@ -44,7 +44,7 @@ public class UserRepositoryTest {
     @Test
     public void testFindTest(){
         try{
-            UserTestEntity entity = userRepository.findTest(1L);
+            UserEntity entity = userRepository.findTest(1L);
             logger.info("=======testFindTest  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.debug("=======Exception     "+e.getMessage());

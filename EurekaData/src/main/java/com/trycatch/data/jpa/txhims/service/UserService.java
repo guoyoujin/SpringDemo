@@ -1,15 +1,14 @@
 package com.trycatch.data.jpa.txhims.service;
 
 
-import com.trycatch.eurekabean.data.txhims.entity.UserTestEntity;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Component("com.trycatch.data.jpa.txhims.service.UserService")
 public interface UserService {
-   List<UserTestEntity> findAll();
-   UserTestEntity find(Long id);
-   UserTestEntity findTest(Long id);
+   List<UserEntity> findAll();
+   UserEntity find(Long id);
+   UserEntity findTest(Long id);
 }

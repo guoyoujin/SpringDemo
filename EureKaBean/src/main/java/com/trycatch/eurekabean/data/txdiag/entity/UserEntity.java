@@ -111,7 +111,7 @@ public class UserEntity extends BaseEntity {
 
     @Override
     public String toString() {
-        return "UserTestEntity{" +
+        return "UserEntity{" +
                 "name='" + name + '\'' +
                 ", id='" + this.getId() + '\'' +
                 ", created_at='" + this.getCreatedAt() + '\'' +

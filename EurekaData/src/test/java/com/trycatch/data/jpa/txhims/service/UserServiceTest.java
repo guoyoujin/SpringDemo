@@ -2,7 +2,7 @@ package com.trycatch.data.jpa.txhims.service;
 
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.eurekabean.data.txhims.entity.UserTestEntity;
+import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,14 +27,14 @@ public class UserServiceTest {
 
     @Test
     public void testFind(){
-        UserTestEntity userEntity = userService.find(userID);
+        UserEntity userEntity = userService.find(userID);
         logger.info("testFind  userEntity ,{}",userEntity);
     }
 
     @Test
     public void testFind0(){
         try {
-            UserTestEntity userEntity = userService.find(0L);
+            UserEntity userEntity = userService.find(0L);
             logger.info("testFind0  userEntity  ,{}", userEntity);
         }catch (Exception e){
             logger.error("Exception",e);
@@ -43,14 +43,14 @@ public class UserServiceTest {
 
     @Test
     public void testFindAll(){
-        List<UserTestEntity> listUserTestEntity = userService.findAll();
-        logger.info("testFindAll  listUserTestEntity  ,{}", listUserTestEntity);
+        List<UserEntity> listUserEntity = userService.findAll();
+        logger.info("testFindAll  listUserEntity  ,{}", listUserEntity);
     }
 
     @Test
     public void testFindTest(){
         try{
-            UserTestEntity userEntity = userService.findTest(1L);
+            UserEntity userEntity = userService.findTest(1L);
             logger.info("testFindTest  userEntity  ,{}",userEntity);
         }catch (Exception e){
             logger.error("Exception",e);

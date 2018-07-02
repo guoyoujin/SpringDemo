@@ -20,6 +20,7 @@ public class UserDaoImplTest {
     private final static Logger logger = LoggerFactory.getLogger(UserDaoImplTest.class);
 
     @Autowired
+    @Resource(name="com.trycatch.data.jpa.txdiag.repository.dao.impl.UserRepositoryImpl")
     private UserRepositoryCustom userDao;
 
     private Long userID = 1L;
