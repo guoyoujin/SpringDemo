@@ -26,8 +26,12 @@ public class UserServiceTest {
 
     @Test
     public void testFind(){
-        UserEntity userEntity = userService.find(userID);
-        logger.info("testFind  userEntity ,{}",userEntity);
+        try {
+            UserEntity userEntity = userService.find(userID);
+            logger.info("testFind  userEntity ,{}",userEntity);
+        }catch (Exception e){
+            logger.error("Exception",e);
+        }
     }
 
     @Test

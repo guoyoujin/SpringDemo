@@ -29,7 +29,7 @@ public class UserRepositoryTest {
             UserEntity entity = userRepository.find(userID);
             logger.info("testFind  userEntity ,{}",entity.toString());
         }catch (Exception e){
-            logger.debug("======="+e.getMessage());
+            logger.error("Exception",e);
         }
     }
 
@@ -39,7 +39,7 @@ public class UserRepositoryTest {
             UserEntity entity = userRepository.find(0L);
             logger.info("testFind0  userEntity ,{}",entity.toString());
         }catch (Exception e){
-            logger.debug("======="+e.getMessage());
+            logger.error("Exception",e);
         }
     }
 
@@ -49,7 +49,7 @@ public class UserRepositoryTest {
             UserEntity entity = userRepository.findTest(1L);
             logger.info("testFindTest  userEntity ,{}",entity.toString());
         }catch (Exception e){
-            logger.debug("======="+e.getMessage());
+            logger.error("Exception",e);
         }
     }
 

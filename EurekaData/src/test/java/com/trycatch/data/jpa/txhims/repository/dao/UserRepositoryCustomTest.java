@@ -1,4 +1,4 @@
-package com.trycatch.data.jpa.txhims.repository;
+package com.trycatch.data.jpa.txhims.repository.dao;
 
 import com.trycatch.data.jpa.Application;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
@@ -11,22 +11,25 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
-public class UserRepositoryTest {
-    private final static Logger logger = LoggerFactory.getLogger(UserRepositoryTest.class);
+public class UserRepositoryCustomTest {
+
+    private final static Logger logger = LoggerFactory.getLogger(UserRepositoryCustomTest.class);
 
     @Autowired
-    @Qualifier("com.trycatch.data.jpa.txhims.repository.UserRepository")
-    private UserRepository userRepository;
+    @Qualifier(value="com.trycatch.data.jpa.txhims.repository.dao.impl.UserRepositoryImpl")
+    private UserRepositoryCustom userRepositoryCustom;
+
     private Long userID = 1L;
 
     @Test
     public void testFind(){
         try{
-            UserEntity entity = userRepository.find(userID);
+            UserEntity entity = userRepositoryCustom.find(userID);
             logger.info("testFind  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.error("Exception",e);
@@ -36,7 +39,7 @@ public class UserRepositoryTest {
     @Test
     public void testFind0(){
         try{
-            UserEntity entity = userRepository.find(0L);
+            UserEntity entity = userRepositoryCustom.find(0L);
             logger.info("testFind0  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.error("Exception",e);
@@ -46,20 +49,12 @@ public class UserRepositoryTest {
     @Test
     public void testFindTest(){
         try{
-            UserEntity entity = userRepository.findTest(1L);
+            UserEntity entity = userRepositoryCustom.findTest(1L);
             logger.info("=======testFindTest  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.error("Exception",e);
         }
     }
-
-    @Test
-    public void testFindListByNativeSql(){
-        try{
-            List<UserEntity> listUserEntity = userRepository.findListByNativeSql("select *from users",UserEntity.class);
-            logger.info("testFindListByNativeSql  listUserEntity  ,{}",listUserEntity);
-        }catch (Exception e){
-            logger.error("Exception",e);
-        }
-    }
 }
+
+
