@@ -1,4 +1,4 @@
-package com.trycatch.data.jpa.txdiag.service;
+package com.trycatch.data.jpa.base;
 
 import java.util.List;
 

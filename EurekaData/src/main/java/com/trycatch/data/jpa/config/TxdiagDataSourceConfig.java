@@ -1,7 +1,7 @@
 package com.trycatch.data.jpa.config;
 
-import com.trycatch.data.jpa.BaseRepositoryFactoryBean;
-import com.trycatch.data.jpa.txdiag.repository.BaseRepository;
+import com.trycatch.data.jpa.base.BaseRepositoryFactoryBean;
+import com.trycatch.data.jpa.txdiag.repository.TxdiagEntityManager;
 import com.trycatch.eurekabean.data.txdiag.entity.TxdiagEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,7 +22,7 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(
     basePackageClasses = {
-            BaseRepository.class
+            TxdiagEntityManager.class
     },
     repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class,
     repositoryImplementationPostfix = "Impl",

@@ -1,5 +1,6 @@
 package com.trycatch.data.jpa.txhims.repository;
 
+import com.trycatch.data.jpa.base.BaseRepository;
 import com.trycatch.data.jpa.txhims.repository.dao.UserRepositoryCustom;
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import org.springframework.stereotype.Repository;

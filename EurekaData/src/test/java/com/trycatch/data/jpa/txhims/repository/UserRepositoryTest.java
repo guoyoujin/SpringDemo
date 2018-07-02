@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
 public class UserRepositoryTest {
@@ -48,6 +50,16 @@ public class UserRepositoryTest {
             logger.info("=======testFindTest  userEntity ,{}",entity.toString());
         }catch (Exception e){
             logger.debug("=======Exception     "+e.getMessage());
+        }
+    }
+
+    @Test
+    public void testFindListByNativeSql(){
+        try{
+            List<UserEntity> listUserEntity = userRepository.findListByNativeSql("select *from users",UserEntity.class);
+            logger.info("testFindListByNativeSql  listUserEntity  ,{}",listUserEntity);
+        }catch (Exception e){
+            logger.error("Exception",e);
         }
     }
 }

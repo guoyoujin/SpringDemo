@@ -1,4 +1,4 @@
-package com.trycatch.data.jpa.txdiag.repository;
+package com.trycatch.data.jpa.base;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
