@@ -1,6 +1,6 @@
 package com.trycatch.data.jpa.config;
 
-import com.trycatch.data.jpa.txhims.TxhimsRepository;
+import com.trycatch.data.jpa.txhims.repository.TxhimsRepository;
 import com.trycatch.eurekabean.data.txhims.entity.TxhimsEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
