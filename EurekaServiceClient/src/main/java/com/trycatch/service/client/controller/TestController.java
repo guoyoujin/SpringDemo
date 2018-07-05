@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-
     @RequestMapping("/say")
     public String say() {
         return "hello test service, from port:";
