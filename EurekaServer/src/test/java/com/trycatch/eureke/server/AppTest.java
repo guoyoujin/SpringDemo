@@ -1,4 +1,4 @@
-package com.trycatch.service.client.eureke.server;
+package com.trycatch.eureke.server;
 
 import static org.junit.Assert.assertTrue;
 

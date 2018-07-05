@@ -5,7 +5,34 @@ instance:
 
 spring:
   application:
-    name: service-test
+      name: service-test
+  datasource:
+    txdiag:
+      jdbc-url: jdbc:mysql://localhost:3306/txdiag?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+    txhims:
+      jdbc-url: jdbc:mysql://localhost:3306/txhims?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+    format: true
+    show-sql: true
+    hibernate:
+      txdiag:
+        persistence-unit: txdiagUnit
+      txhims:
+        persistence-unit: txhimsUnit
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+logging:
+  config: classpath:logback-boot.xml
+  file: log/myapplication.log
 
 eureka:
   client:

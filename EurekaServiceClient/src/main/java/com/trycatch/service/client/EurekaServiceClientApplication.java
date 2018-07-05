@@ -1,5 +1,6 @@
 package com.trycatch.service.client;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -8,22 +9,28 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Hello world!
  *
  */
-@EntityScan("com.trycatch.eurka.service.client")
-@SpringBootApplication(exclude = {
+@SpringBootApplication(
+    scanBasePackages = {
+        "com.trycatch.service.client",
+        "com.trycatch.data.jpa"
+    },
+    exclude = {
         DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class
-})
+    }
+)
 @EnableDiscoveryClient
 public class EurekaServiceClientApplication
 {
     public static void main( String[] args )
     {
-         new SpringApplicationBuilder(EurekaServiceClientApplication.class).web(WebApplicationType.SERVLET).run(args);
+        new SpringApplicationBuilder(EurekaServiceClientApplication.class).web(WebApplicationType.SERVLET).run(args);
     }
 }
