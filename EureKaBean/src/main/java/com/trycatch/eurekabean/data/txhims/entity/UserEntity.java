@@ -12,29 +12,29 @@ public class UserEntity extends BaseEntity {
     @Column(name="name")
     private String name;
 
+    @Column(name="realname")
+    private String realname;
+
     @Column(name="phone")
     private String phone;
 
     @Column(name="email")
     private String email;
 
-    @Column(name="salt")
-    private String salt;
+    @Column(name="hospital_id")
+    private String hospitalId;
 
-    @Column(name="role")
-    private Integer role;
+    @Column(name="is_delete")
+    private boolean isDelete;
 
-    @Column(name="first_login")
-    private Integer firstLogin;
+    @Column(name="role_id")
+    private Long roleId;
 
-    @Column(name="realname")
-    private String realname;
+    @Column(name="add_from")
+    private Long addFrom;
 
-    @Column(name="has_delete")
-    private Boolean hasDelete;
-
-    @Column(name="doctor_id")
-    private Long doctorId;
+    @Column(name="report_doctor")
+    private String reportDoctor;
 
     public String getName() {
         return name;
@@ -42,6 +42,14 @@ public class UserEntity extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
     }
 
     public String getPhone() {
@@ -60,69 +68,43 @@ public class UserEntity extends BaseEntity {
         this.email = email;
     }
 
-    public String getSalt() {
-        return salt;
+    public String getHospitalId() {
+        return hospitalId;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
+    public void setHospitalId(String hospitalId) {
+        this.hospitalId = hospitalId;
     }
 
-    public Integer getRole() {
-        return role;
+    public boolean isDelete() {
+        return isDelete;
     }
 
-    public void setRole(Integer role) {
-        this.role = role;
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 
-    public Integer getFirstLogin() {
-        return firstLogin;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setFirstLogin(Integer firstLogin) {
-        this.firstLogin = firstLogin;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
-    public String getRealname() {
-        return realname;
+    public Long getAddFrom() {
+        return addFrom;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setAddFrom(Long addFrom) {
+        this.addFrom = addFrom;
     }
 
-    public Boolean getHasDelete() {
-        return hasDelete;
+    public String getReportDoctor() {
+        return reportDoctor;
     }
 
-    public void setHasDelete(Boolean hasDelete) {
-        this.hasDelete = hasDelete;
-    }
-
-    public Long getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(Long doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "name='" + name + '\'' +
-                ", id='" + this.getId() + '\'' +
-                ", created_at='" + this.getCreatedAt() + '\'' +
-                ", updated_at='" + this.getUpdatedAt() + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", salt='" + salt + '\'' +
-                ", role=" + role +
-                ", firstLogin=" + firstLogin +
-                ", realname='" + realname + '\'' +
-                ", hasDelete=" + hasDelete +
-                ", doctorId=" + doctorId +
-                '}';
+    public void setReportDoctor(String reportDoctor) {
+        this.reportDoctor = reportDoctor;
     }
 }

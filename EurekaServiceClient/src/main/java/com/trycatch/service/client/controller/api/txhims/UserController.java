@@ -3,7 +3,6 @@ package com.trycatch.service.client.controller.api.txhims;
 
 import com.trycatch.eurekabean.data.txhims.entity.UserEntity;
 import com.trycatch.service.client.controller.api.ApiResult;
-import com.trycatch.service.client.controller.api.Constant;
 import com.trycatch.service.client.controller.api.ResultGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
