@@ -4,6 +4,7 @@ package com.trycatch.service.client.controller.api.txdiag;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import com.trycatch.service.client.controller.api.ApiResult;
 import com.trycatch.service.client.controller.api.Constant;
+import com.trycatch.service.client.controller.api.ResultGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,13 +20,13 @@ public class UserController extends BaseTxdiagController{
     @RequestMapping("/list")
     public ApiResult<List<UserEntity>> List() {
         logger.info("====UserController===List===");
-        return new ApiResult<>(Constant.MSG_SUCCSS,Constant.FLAG_SUCCESS, userService.findAll(),Constant.REQ_SUCCESS);
+        return ResultGenerator.genSuccessResult(userService.findAll());
     }
 
     @RequestMapping("/{id}")
     public ApiResult<UserEntity> find(@PathVariable(name="id") Long id) {
         logger.info("====UserController===List===");
-        return new ApiResult(Constant.MSG_SUCCSS,Constant.FLAG_SUCCESS, userService.find(id),Constant.REQ_SUCCESS);
+        return ResultGenerator.genSuccessResult(userService.find(id));
     }
 
 }
