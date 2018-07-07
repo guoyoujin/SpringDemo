@@ -30,4 +30,5 @@ public class EurekaServiceClientApplication
     {
         new SpringApplicationBuilder(EurekaServiceClientApplication.class).web(WebApplicationType.SERVLET).run(args);
     }
+
 }
