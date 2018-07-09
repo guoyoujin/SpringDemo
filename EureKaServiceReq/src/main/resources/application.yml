@@ -7,8 +7,8 @@ spring:
 
 eureka:
   instance:
-    leaseRenewalIntervalInSeconds: 10
-    leaseExpirationDurationInSeconds: 30
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   client:
      serviceUrl:
         defaultZone: http://root:root@192.168.1.58:8888/eureka/
@@ -22,6 +22,12 @@ feign:
       enabled: true
   hystrix:
     enabled: true
+
+logging:
+  level:
+    com.netflix.ribbon: DEBUG
+    com.netflix.hystrix: DEBUG
+
 hystrix:
   command:
     default:
@@ -29,4 +35,4 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 1000

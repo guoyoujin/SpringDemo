@@ -9,6 +9,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -29,6 +30,7 @@ import org.springframework.context.annotation.Configuration;
 )
 @Configuration
 @EnableFeignClients
+@ComponentScan("com.trycatch.eureka.service.req")
 public class EurekaServiceReqSpringApplication
 {
     public static void main( String[] args )
