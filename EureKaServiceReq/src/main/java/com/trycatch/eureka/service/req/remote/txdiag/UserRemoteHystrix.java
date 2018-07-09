@@ -1,6 +1,6 @@
-package com.trycatch.eureka.service.req.remote;
+package com.trycatch.eureka.service.req.remote.txdiag;
 
-import com.trycatch.eureka.service.req.remote.impl.UserRemote;
+import com.trycatch.eureka.service.req.remote.txdiag.impl.UserRemote;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import com.trycatch.service.client.controller.api.ApiResult;
 
