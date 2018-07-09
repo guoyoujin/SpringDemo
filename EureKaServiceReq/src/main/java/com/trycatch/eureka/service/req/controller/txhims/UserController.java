@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    @Qualifier("com.trycatch.eureka.service.req.remote.txhims.impl.UserRemote")
     private UserRemote userRemote;
 
     @RequestMapping(value = "/list",produces = MediaType.APPLICATION_JSON_VALUE)

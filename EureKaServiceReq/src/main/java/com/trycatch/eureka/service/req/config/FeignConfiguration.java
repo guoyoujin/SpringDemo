@@ -1,5 +1,6 @@
 package com.trycatch.eureka.service.req.config;
 
+import feign.Feign;
 import feign.Logger;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 
@@ -22,6 +24,12 @@ public class FeignConfiguration {
     @Bean
     Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Feign.Builder feignBuilder() {
+        return Feign.builder();
     }
 
     @Bean

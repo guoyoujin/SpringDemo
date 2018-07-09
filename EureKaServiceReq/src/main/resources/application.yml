@@ -6,6 +6,27 @@ spring:
     name: eureka-service-req
 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
   client:
      serviceUrl:
-          defaultZone: http://root:root@192.168.1.58:8888/eureka/
+        defaultZone: http://root:root@192.168.1.58:8888/eureka/
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 60000
