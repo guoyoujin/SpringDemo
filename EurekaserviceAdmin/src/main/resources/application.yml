@@ -5,6 +5,15 @@ spring:
     user:
       name: admin
       password: admin
+  mail:
+    host: smtp.qq.com
+    username: 1132576362@qq.com
+    password: 123456
+  boot:
+    admin:
+      notify:
+        mail:
+          to: 1132576362@qq.com
 server:
   port: 8120
 eureka:
