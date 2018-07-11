@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: production
+  security:
+    basic:
+      enabled: true
+    user:
+      password: trycatch
+      name: trycatch
+  application:
+    name: service-discovery-peer1
+server:
+  port: 8101
+
+eureka:
+  instance:
+    hostname: peer1
+    appname: peer1
+    ip-address: 192.168.1.58
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    prefer-ip-address: true
+    statusPageUrl: https://${eureka.instance.ip-address}:${server.port}/info
+    healthCheckUrl: https://${eureka.instance.ip-address}:${server.port}/health
+    homePageUrl: https://${eureka.instance.ip-address}:${server.port}
+    lease-expiration-duration-in-seconds: 90
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://trycatch:trycatch@192.168.1.58:8103/eureka/,http://192.168.1.123:8000/eureka/,http://trycatch:trycatch@192.168.1.58:8888/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    eviction-interval-timer-in-ms: 1000

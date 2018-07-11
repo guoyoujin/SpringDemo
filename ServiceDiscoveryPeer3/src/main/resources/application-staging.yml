@@ -1,0 +1,6 @@
+spring:
+  profiles: staging
+
+eureka:
+  datacenter: staging-data
+  environment: staging

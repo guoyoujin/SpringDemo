@@ -1,0 +1,6 @@
+spring:
+  profiles: production
+
+eureka:
+  datacenter: production-data
+  environment: production

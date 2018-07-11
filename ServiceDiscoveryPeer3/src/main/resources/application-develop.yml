@@ -1,0 +1,6 @@
+spring:
+  profiles: develop
+
+eureka:
+  datacenter: develop-data
+  environment: develop

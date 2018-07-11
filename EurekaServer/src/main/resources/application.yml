@@ -3,8 +3,8 @@ server:
 spring:
   security:
     user:
-      password: root
-      name: root
+      password: trycatch
+      name: trycatch
   application:
     name: service-server
 

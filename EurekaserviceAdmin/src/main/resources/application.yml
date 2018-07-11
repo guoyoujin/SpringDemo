@@ -20,7 +20,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     service-url:
-      defaultZone: http://root:root@192.168.1.58:8888/eureka/
+      defaultZone: http://trycatch:trycatch@192.168.1.58:8101/eureka/,http://trycatch:trycatch@192.168.1.58:8103/eureka/,http://trycatch:trycatch@192.168.1.58:8888/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health

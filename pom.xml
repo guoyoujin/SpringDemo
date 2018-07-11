@@ -15,8 +15,10 @@
     <module>EureKaServiceReq</module>
     <module>EureKaBean</module>
     <module>EurekaData</module>
-      <module>EurekaServiceClientTwo</module>
-      <module>EurekaserviceAdmin</module>
+    <module>EurekaServiceClientTwo</module>
+    <module>EurekaserviceAdmin</module>
+    <module>ServiceDiscoveryPeer1</module>
+      <module>ServiceDiscoveryPeer3</module>
   </modules>
 
   <name>SpringDemo</name>
@@ -80,6 +82,11 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
     <dependency>
