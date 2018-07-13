@@ -1,6 +1,10 @@
 package com.trycatch.eurekabean.data.txdiag.entity;
 
+import com.trycatch.custom.util.Converter.RoleConverter;
+import com.trycatch.custom.util.enums.Role;
+
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -23,7 +27,8 @@ public class UserEntity extends BaseEntity {
     private String salt;
 
     @Column(name="role")
-    private Integer role;
+    @Convert(converter = RoleConverter.class)
+    private Role role;
 
     @Column(name="first_login")
     private Integer firstLogin;
@@ -69,11 +74,11 @@ public class UserEntity extends BaseEntity {
         this.salt = salt;
     }
 
-    public Integer getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(Integer role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
