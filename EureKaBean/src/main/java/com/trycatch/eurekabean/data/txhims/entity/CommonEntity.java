@@ -1,5 +1,7 @@
 package com.trycatch.eurekabean.data.txhims.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -8,12 +10,14 @@ import java.util.Date;
 @MappedSuperclass
 public class CommonEntity implements Serializable {
     private static final long serialVersionUID= 213111232313123123L;
-    @Column(name="created_at")
+    @Column(name="created_at",columnDefinition = " COMMENT '数据创建时间' ")
     private Date createdAt;
-    @Column(name="updated_at")
+    @Column(name="updated_at",columnDefinition = " COMMENT '数据最后一次更新时间' ")
     private Date updatedAt;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -23,6 +27,7 @@ public class CommonEntity implements Serializable {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
     public Date getUpdatedAt() {
         return updatedAt;
     }

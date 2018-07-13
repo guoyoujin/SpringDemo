@@ -8,10 +8,10 @@ import java.util.Date;
 @EntityListeners({EntityListener.class})
 @MappedSuperclass
 public class CommonEntity implements Serializable {
-    @Column(name="created_at")
+    @Column(name="created_at",columnDefinition = " COMMENT '数据创建时间' ")
     private Date createdAt;
 
-    @Column(name="updated_at")
+    @Column(name="updated_at",columnDefinition = " COMMENT '数据最后一次更新时间' ")
     private Date updatedAt;
 
     @Temporal(TemporalType.TIMESTAMP)

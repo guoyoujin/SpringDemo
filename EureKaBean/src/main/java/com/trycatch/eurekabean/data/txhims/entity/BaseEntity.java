@@ -7,7 +7,7 @@ public class BaseEntity extends CommonEntity {
     private static final long serialVersionUID= 213111232313123113L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column( name = "id" )
+    @Column( name = "id",columnDefinition = " COMMENT '自增长ID' ")
     private Long id;
 
     public Long getId() {
