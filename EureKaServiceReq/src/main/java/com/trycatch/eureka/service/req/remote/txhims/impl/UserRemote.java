@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "service-client", path = "/api/txhims/users", fallback = UserRemoteHystrix.class,configuration = OpenFeignConfiguration.class)
+@FeignClient(value = "service-client", path = "/api/txhims/users", fallbackFactory = UserRemoteHystrix.class,configuration = OpenFeignConfiguration.class)
 public interface UserRemote {
     @RequestMapping(method = RequestMethod.GET, value = "/list",consumes = "application/json")
     ApiResult list();
