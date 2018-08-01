@@ -1,5 +1,6 @@
 package com.trycatch.service.client.controller.api.txdiag;
 
+import com.trycatch.data.jpa.txdiag.service.HysDrugInfoService;
 import com.trycatch.data.jpa.txdiag.service.UserService;
 import com.trycatch.service.client.controller.api.BaseApiController;
 import org.slf4j.Logger;
@@ -13,4 +14,8 @@ public class BaseTxdiagController extends BaseApiController{
     @Autowired
     @Resource(name="com.trycatch.data.jpa.txdiag.service.impl.UserServiceImpl")
     public UserService userService;
+
+    @Autowired
+    @Resource(name="com.trycatch.data.jpa.txdiag.service.impl.HysDrugInfoServiceImpl")
+    public HysDrugInfoService hysDrugInfoService;
 }

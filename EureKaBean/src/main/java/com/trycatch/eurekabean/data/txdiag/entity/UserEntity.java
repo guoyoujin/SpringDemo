@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity(name="com.trycatch.eurekabean.data.txdiag.entity.UserEntity")
 @Table(name = "users")
-public class UserEntity extends BaseEntity {
+public class UserEntity extends BaseIdEntity {
     private static final long serialVersionUID= 21312313123123L;
 
     @Column(name="name")
