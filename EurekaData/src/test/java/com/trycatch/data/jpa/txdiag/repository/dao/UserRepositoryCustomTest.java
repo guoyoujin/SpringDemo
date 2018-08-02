@@ -1,7 +1,6 @@
 package com.trycatch.data.jpa.txdiag.repository.dao;
 
 import com.trycatch.data.jpa.Application;
-import com.trycatch.data.jpa.txdiag.repository.dao.impl.UserRepositoryImpl;
 import com.trycatch.eurekabean.data.txdiag.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,8 +11,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.annotation.Resource;
-import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -31,7 +28,7 @@ public class UserRepositoryCustomTest {
     public void testFind(){
         try{
             UserEntity entity = userRepositoryCustom.find(userID);
-            logger.info("testFind  userEntity ,{}",entity.toString());
+            logger.info("testFind  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
@@ -41,7 +38,7 @@ public class UserRepositoryCustomTest {
     public void testFind0(){
         try{
             UserEntity entity = userRepositoryCustom.find(0L);
-            logger.info("testFind0  userEntity ,{}",entity.toString());
+            logger.info("testFind0  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
@@ -51,7 +48,7 @@ public class UserRepositoryCustomTest {
     public void testFindTest(){
         try{
             UserEntity entity = userRepositoryCustom.findTest(1L);
-            logger.info("=======testFindTest  userEntity ,{}",entity.toString());
+            logger.info("=======testFindTest  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }

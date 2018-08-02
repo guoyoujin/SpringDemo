@@ -28,7 +28,7 @@ public class UserRepositoryImplTest {
     public void testFind(){
         try{
             UserEntity entity = userRepositoryImpl.find(userID);
-            logger.info("testFind  userEntity ,{}",entity.toString());
+            logger.info("testFind  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
@@ -38,7 +38,7 @@ public class UserRepositoryImplTest {
     public void testFind0(){
         try{
             UserEntity entity = userRepositoryImpl.find(0L);
-            logger.info("testFind0  userEntity ,{}",entity.toString());
+            logger.info("testFind0  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
@@ -48,7 +48,7 @@ public class UserRepositoryImplTest {
     public void testFindTest(){
         try{
             UserEntity entity = userRepositoryImpl.findTest(1L);
-            logger.info("=======testFindTest  userEntity ,{}",entity.toString());
+            logger.info("=======testFindTest  userEntity ,{}",entity);
         }catch (Exception e){
             logger.error("Exception",e);
         }
