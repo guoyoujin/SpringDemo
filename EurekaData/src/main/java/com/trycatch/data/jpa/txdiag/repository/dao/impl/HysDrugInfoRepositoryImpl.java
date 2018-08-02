@@ -18,9 +18,13 @@ public class HysDrugInfoRepositoryImpl extends TxdiagEntityManager implements Hy
     @Override
     public List<HysDrugInfoEntity> findAll() {
         logger.info("=========== txdiag HysDrugInfoRepositoryImpl   findAll()");
-        Query query =  this.entityManager
-                .createQuery("select t from com.trycatch.eurekabean.data.txdiag.entity.HysDrugInfoEntity t");
-        return query.getResultList().size() == 0 ? null : query.getResultList();
+        Query query =  this.entityManager.createQuery("select t from com.trycatch.eurekabean.data.txdiag.entity.HysDrugInfoEntity t");
+        try {
+            return (List<HysDrugInfoEntity>)query.getResultList();
+        }catch (Exception e){
+            logger.info("=========== txdiag  findAll HysDrugInfoRepositoryImpl   Exception(),{}",e);
+            return null;
+        }
     }
 
     @Override
@@ -29,7 +33,12 @@ public class HysDrugInfoRepositoryImpl extends TxdiagEntityManager implements Hy
         Query query =this.entityManager
                 .createQuery("select t from com.trycatch.eurekabean.data.txdiag.entity.HysDrugInfoEntity t where t.id = :id ")
                 .setParameter("id",id);
-        return query.getResultList().size() == 0 ? null : (HysDrugInfoEntity)query.getSingleResult();
+        try {
+            return (HysDrugInfoEntity) query.getSingleResult();
+        }catch (Exception e){
+            logger.info("=========== txdiag find HysDrugInfoRepositoryImpl   Exception(),{}",e);
+            return null;
+        }
     }
 
     @Override
@@ -38,6 +47,11 @@ public class HysDrugInfoRepositoryImpl extends TxdiagEntityManager implements Hy
         Query query = this.entityManager
                 .createQuery("select t from com.trycatch.eurekabean.data.txdiag.entity.HysDrugInfoEntity t where t.id = :id ")
                 .setParameter("id", id);
-        return query.getResultList().size() == 0 ? null : (HysDrugInfoEntity)query.getSingleResult();
+        try {
+            return (HysDrugInfoEntity) query.getSingleResult();
+        }catch (Exception e){
+            logger.info("=========== txdiag findTest HysDrugInfoRepositoryImpl   Exception(),{}",e);
+            return null;
+        }
     }
 }
