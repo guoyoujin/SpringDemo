@@ -1,0 +1,47 @@
+server:
+  port: 8030
+instance:
+  hostname: 192.168.1.58
+
+spring:
+  application:
+      name: service-scheduler
+  datasource:
+    txdiag:
+      jdbc-url: jdbc:mysql://localhost:3306/txdiag?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+    txhims:
+      jdbc-url: jdbc:mysql://localhost:3306/txhims?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+    format: true
+    show-sql: true
+    hibernate:
+      txdiag:
+        persistence-unit: txdiagUnit
+      txhims:
+        persistence-unit: txhimsUnit
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+logging:
+  config: classpath:logback-boot.xml
+  file: log/myapplication.log
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://trycatch:trycatch@127.0.0.1:8101/eureka/,http://trycatch:trycatch@127.0.0.1:8103/eureka/,http://trycatch:trycatch@127.0.0.1:8888/eureka/

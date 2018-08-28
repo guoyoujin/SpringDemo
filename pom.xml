@@ -18,7 +18,9 @@
     <module>EurekaServiceClientTwo</module>
     <module>EurekaserviceAdmin</module>
     <module>ServiceDiscoveryPeer1</module>
-      <module>ServiceDiscoveryPeer3</module>
+    <module>ServiceDiscoveryPeer3</module>
+    <module>SchedulerJob</module>
+    <module>HysDrugLib</module>
   </modules>
 
   <name>SpringDemo</name>
